@@ -3,13 +3,9 @@ const express = require('express');
 const app = express();
 const port = 3000
 
-app.set("view engine", "ejs")
-app.set("views", "./views")
-
-
-//rotas
-
-require('../route/home')(app);
+app.get("/",(req,res)=>{
+  res.send(" ola")
+})
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`);
