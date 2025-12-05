@@ -1,23 +1,16 @@
 const express = require('express');
-const bodyParser = require("body-parser");
-const cors = require('cors');
 const app = express();
 const port = 3000
 
 app.set("view engine", "ejs")
 app.set("views", "./views")
 
-app.use(bodyParser.json());
+
 /* estas linhas são para leitura de de body.json */
 app.use(express.json());
 app.use(express.urlencoded());
 /* aqui é o acesso exerno do sistema para a api */
 
-app.use(cors({
-    origin: "*",
-    methods: ["GET", "POST", "PUT", "DELETE"],
-    allowedHeaders: ["Content-Type", "Authorization"]
-}));
 
 //rotas
 require('../db/dbconnect')(app);
