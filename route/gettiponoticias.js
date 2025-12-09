@@ -6,7 +6,7 @@ module.exports = (app) => {
             const tiponoticias = req.params.tiponoticias
             await app.DBClient.connect(); //realizar a conexão com o banco 
             const noticias = await app.DBClient.db('portalnoticias')
-            .collection('noticias').find({tiponoticias: new RegExp(tiponoticias, 'i')}).toArray();
+            .collection('noticias').find({tiponoticia: new RegExp(tiponoticias, 'i')}).toArray();
             res.json(noticias)
         } finally {
             // Ensures that the client will close when you finish/error
