@@ -19,6 +19,8 @@ require('../route/getnoticias')(app);
 require('../route/delnoticias')(app);
 require('../route/postnoticias')(app);
 require('../route/putnoticias')(app);
+require('../route/getidnoticias')(app);
+require('../route/gettiponoticias')(app);
 
 
 app.listen(port, () => {
